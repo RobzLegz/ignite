@@ -32,4 +32,4 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=${gamesPerPage}`;
 
-const popularGamesURL = () => `${BASE_URL}${popular_games}${KEY}`;
+export const popularGamesURL = () => `${BASE_URL}${popular_games}${KEY}`;
