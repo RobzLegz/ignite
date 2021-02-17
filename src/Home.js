@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadGames } from './actions/gamesAction';
+import Game from './Game';
 
 const Home = () => {
 
@@ -12,7 +13,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            
+            <Game />
         </div>
     )
 }
