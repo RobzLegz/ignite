@@ -1,5 +1,3 @@
-import axios from "axios"
-
 const initialState = {
     popular : [],
     newGames : [],
@@ -12,6 +10,9 @@ const gamesReducer = (state = initialState, action) => {
         case "FETCH_GAMES":
             return{
                 ...state,
+                popular: action.payload.popular,
+                upcoming: action.payload.upcoming,
+                newGames: action.payload.newGames,
             };
         default:
             return{
@@ -19,13 +20,5 @@ const gamesReducer = (state = initialState, action) => {
             };
     };
 };
-
-const fetchGames = (userData) => {
-    axios.get( )
-    return{
-        type: "FETCH_GAMES",
-        payload: userData,
-    }
-}
 
 export default gamesReducer
