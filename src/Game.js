@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Game = () => {
+const Game = ({name,released,id,image}) => {
     return (
         <div>
-            <h3>Game Name</h3>
-            <p>Released</p>
+            <h3>{name}</h3>
+            <p>{released}</p>
+            <img src={image} alt={name}/>
         </div>
     )
 }

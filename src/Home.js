@@ -19,8 +19,14 @@ const Home = () => {
         <Gamelist className="home">
             <h1>Upcoming Games</h1>
             <Games>
-                {upcoming.map((game) => (
-                    <Game />
+                {upcoming?.map((game) => (
+                    <Game 
+                        key={game.id}
+                        name={game.name} 
+                        released={game.released} 
+                        id={game.id}
+                        image={game.background_image}
+                    />
                 ))}
             </Games>
         </Gamelist>
