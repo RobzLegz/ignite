@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import logo from "./img/logo.svg";
 
 const Header = () => {
     return (
         <StyledHeader className="header">
-            <img src={logo} alt="logo"/>
             <form className="search">
                 <input placeholder="Search Games" type="text"/>
                 <button type="submit">Search</button>
@@ -28,12 +26,6 @@ const StyledHeader = styled(motion.nav)`
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    img{
-        height:40px;
-        width:auto;
-        cursor: pointer;
-        margin-right: 30px;
-    }
     form > input{ 
         width:300px;
         height: 40px;
