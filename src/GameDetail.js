@@ -72,6 +72,7 @@ const Detail = styled(motion.div)`
         width:100%;
         margin: 50px 0;
         border-radius: 20px;
+        pointer-events:none;
     }
     .ratingText{
         color:#000;
