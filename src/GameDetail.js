@@ -10,20 +10,20 @@ const GameDetail = () => {
     return (
         <CardShadow className="cardShadow">
             <Detail className="gameDetail">
-                <div className="gameStats">
+                <Stats className="gameStats">
                     <div className="gameRating">
                         <h1 className="ratingText">{game?.name}</h1>
                         <p className="ratingText">Rating:{game?.rating}</p>
                     </div>
-                    <div className="gameInfo">
-                        <h3 className="ratingText">Platforms</h3>
-                        <div className="platforms">
+                    <Info className="gameInfo">
+                        <h3 className="ratingText">Platforms:</h3>
+                        <Platforms className="platforms">
                             {game?.platforms?.map((data) => (
                                 <h3 className="ratingText" key={data?.platform?.id}>{data?.platform?.name}</h3>
                             ))}
-                        </div>
-                    </div>
-                </div>
+                        </Platforms>
+                    </Info>
+                </Stats>
                 <div className="media">
                     <img src={game?.background_image} alt={game?.background_image}/>
                 </div>
@@ -49,12 +49,20 @@ const CardShadow = styled(motion.div)`
     top:0;
     left: 0;
     z-index: 90;
+    &::-webkit-scrollbar{
+        width:0.5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #c7c2c2;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: #fff;
+    }
 `;
 
 const Detail = styled(motion.div)`
     width:80%;
-    border-radius: 1rem;
-    padding: 2rem 20rem;
+    padding: 2rem 15rem;
     background: #fff;
     position: absolute;
     left: 10%;
@@ -71,6 +79,24 @@ const Detail = styled(motion.div)`
     }
     .lastText{
         margin-bottom: 50px;
+    }
+`;
+
+const Stats = styled(motion.div)`
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+`;
+
+const Info = styled(motion.div)`
+    text-align:center;
+`;
+
+const Platforms = styled(motion.div)`
+    display:flex;
+    justify-content:space-evenly;
+    img{
+        margin-left:3rem;
     }
 `;
 
