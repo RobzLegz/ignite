@@ -39,4 +39,5 @@ export const upcomingGamesURL = () => `${BASE_URL}${upcoming_games}${KEY}`;
 export const newGamesURL = () => `${BASE_URL}${new_Games}${KEY}`;
 export const getGameDetailsURL = (game_id) => `${BASE_URL}games/${game_id}`;
 export const getGameScreenshotsURL = (game_id) => `${BASE_URL}games/${game_id}/screenshots`;
+export const searchedGamesURL = (game_name) => `${BASE_URL}games?search=${game_name}&page_size=9`;
 
