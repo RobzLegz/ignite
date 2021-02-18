@@ -2,15 +2,46 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import playstation from './img/playstation.svg';
+import steam from './img/steam.svg';
+import xbox from './img/xbox.svg';
+import nintendo from './img/nintendo.svg';
+import apple from './img/apple.svg';
+import gamepad from './img/gamepad.svg';
 
 const GameDetail = ({setPopupState}) => {
 
     const {screen,game} = useSelector((state) => state.detail);
+
     const togglePopupVisibility = () => {
         document.body.style.overflow = "auto";
         setPopupState(false)
     }
+
     document.body.style.overflow = "hidden";
+
+    const getPlatformImages = (platform) => {
+        switch(platform){
+            case "PlayStation 4":
+              return playstation;
+            case "PlayStation 5":
+              return playstation;
+            case "Xbox Series S/X":
+              return xbox;
+            case "Xbox S":
+              return xbox;
+            case "Xbox One":
+              return xbox;
+            case "PC":
+              return steam;
+            case "Nintendo Switch":
+              return nintendo;
+            case "iOS":
+              return apple;
+            default:
+              return gamepad;
+        }
+    }
 
     return (
         <CardShadow className="cardShadow">
@@ -22,10 +53,9 @@ const GameDetail = ({setPopupState}) => {
                         <p className="ratingText">Rating:{game?.rating}</p>
                     </div>
                     <Info className="gameInfo">
-                        <h3 className="ratingText">Platforms:</h3>
                         <Platforms className="platforms">
                             {game?.platforms?.map((data) => (
-                                <h3 className="ratingText" key={data?.platform?.id}>{data?.platform?.name}</h3>
+                                <img className="ratingText" key={data?.platform?.id} src={getPlatformImages(data?.platform?.name)} />
                             ))}
                         </Platforms>
                     </Info>
