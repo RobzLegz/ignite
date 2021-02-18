@@ -9,6 +9,7 @@ const GameDetail = ({setPopupState}) => {
 
     return (
         <CardShadow className="cardShadow">
+            <div className="cardShadowLeft" onClick={() => setPopupState(false)}></div>
             <Detail className="gameDetail">
                 <Stats className="gameStats">
                     <div className="gameRating">
@@ -35,7 +36,8 @@ const GameDetail = ({setPopupState}) => {
                         <img src={screenshot?.image} alt={screenshot.id} key={screenshot?.id} />
                     ))}
                 </div>
-            </Detail>            
+            </Detail>     
+            <div className="cardShadowRight" onClick={() => setPopupState(false)}></div>       
         </CardShadow>
     );
 };
@@ -58,10 +60,24 @@ const CardShadow = styled(motion.div)`
     &::-webkit-scrollbar-track{
         background-color: #fff;
     }
+    .cardShadowRight,
+    .cardShadowLeft{
+        width:11%;
+        height:100%;
+        position:fixed;
+        top:0;
+    }
+    .cardShadowRight{
+        margin:0;
+        padding:0;
+        right:0;
+    }
+    .cardShadowLeft{
+        left:0;
+    }
 `;
 
 const Detail = styled(motion.div)`
-    pointer-events:none;
     width:80%;
     min-height: 100%;
     padding: 2rem 15rem;
