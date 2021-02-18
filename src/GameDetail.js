@@ -28,7 +28,7 @@ const GameDetail = () => {
             </div>
             <div className="gallery">
                 {screen.results.map((screenshot) => (
-                    <img src={screenshot.image} alt={screenshot.id}/>
+                    <img src={screenshot.image} alt={screenshot.id} key={screenshot.id} />
                 ))}
             </div>
         </div>
