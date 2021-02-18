@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const GameDetail = ({setPopupState, popupState}) => {
+const GameDetail = ({setPopupState}) => {
 
     const {screen,game} = useSelector((state) => state.detail);
     const togglePopupVisibility = () => {
@@ -71,6 +71,7 @@ const CardShadow = styled(motion.div)`
         height:100%;
         position:fixed;
         top:0;
+        cursor: pointer;
     }
     .cardShadowRight{
         margin:0;

@@ -20,7 +20,7 @@ const Home = () => {
     return (
         <Gamelist className="home">
             <img className="background-image" src={BackgroundImage} alt=""/>
-            {popupState && <GameDetail popupState={popupState} setPopupState={setPopupState} />}
+            {popupState && <GameDetail setPopupState={setPopupState} />}
             <h1>Upcoming Games</h1>
             <Games>
                 {upcoming?.map((game) => (
