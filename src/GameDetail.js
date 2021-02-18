@@ -3,13 +3,18 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const GameDetail = ({setPopupState}) => {
+const GameDetail = ({setPopupState, popupState}) => {
 
     const {screen,game} = useSelector((state) => state.detail);
+    const togglePopupVisibility = () => {
+        document.body.style.overflow = "auto";
+        setPopupState(false)
+    }
+    document.body.style.overflow = "hidden";
 
     return (
         <CardShadow className="cardShadow">
-            <div className="cardShadowLeft" onClick={() => setPopupState(false)}></div>
+            <div className="cardShadowLeft" onClick={togglePopupVisibility}></div>
             <Detail className="gameDetail">
                 <Stats className="gameStats">
                     <div className="gameRating">
@@ -37,7 +42,7 @@ const GameDetail = ({setPopupState}) => {
                     ))}
                 </div>
             </Detail>     
-            <div className="cardShadowRight" onClick={() => setPopupState(false)}></div>       
+            <div className="cardShadowRight" onClick={togglePopupVisibility}></div>       
         </CardShadow>
     );
 };
