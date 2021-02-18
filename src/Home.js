@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { loadGames } from './actions/gamesAction';
@@ -10,7 +10,7 @@ import BackgroundImage from "./img/resourcesbasbdiasufgdosadsadsafdsfdsfdsfdsf.j
 const Home = () => {
 
     const dispatch = useDispatch();
-
+    const [popupState, setPopupState] = useState(false);
     const {popular,newGames,upcoming} = useSelector((state) => state.games);
 
     useEffect(() => {
@@ -20,11 +20,12 @@ const Home = () => {
     return (
         <Gamelist className="home">
             <img className="background-image" src={BackgroundImage} alt=""/>
-            <GameDetail />
+            {popupState && <GameDetail popupState={popupState} setPopupState={setPopupState} />}
             <h1>Upcoming Games</h1>
             <Games>
                 {upcoming?.map((game) => (
-                    <Game 
+                    <Game
+                        setPopupState={setPopupState} 
                         key={game.id}
                         name={game.name} 
                         released={game.released} 
@@ -37,6 +38,7 @@ const Home = () => {
             <Games>
                 {popular?.map((game) => (
                     <Game 
+                        setPopupState={setPopupState} 
                         key={game.id}
                         name={game.name} 
                         released={game.released} 
@@ -49,6 +51,7 @@ const Home = () => {
             <Games>
                 {newGames?.map((game) => (
                     <Game 
+                        setPopupState={setPopupState} 
                         key={game.id}
                         name={game.name} 
                         released={game.released} 
@@ -70,9 +73,10 @@ const Gamelist = styled(motion.div)`
     .background-image{
         width: 100%;
         position:fixed;
+        height:100vh;
         top:0;
         left:0;
-        object-fit:contain;
+        object-fit: cover;
         z-index: -1;
     }
 `;

@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const GameDetail = () => {
+const GameDetail = ({setPopupState}) => {
 
     const {screen,game} = useSelector((state) => state.detail);
 
@@ -61,7 +61,9 @@ const CardShadow = styled(motion.div)`
 `;
 
 const Detail = styled(motion.div)`
+    pointer-events:none;
     width:80%;
+    min-height: 100%;
     padding: 2rem 15rem;
     background: #fff;
     position: absolute;

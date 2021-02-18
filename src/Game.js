@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import {loadDetails} from "./actions/detailAction";
 
-const Game = ({name,released,id,image}) => {
+const Game = ({name,released,id,image,setPopupState}) => {
 
     const dispatch = useDispatch();
 
     const loadDetailHan = () => {
         dispatch(loadDetails(id));
+        setPopupState(true);
     };
 
     return (
