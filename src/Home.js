@@ -29,6 +29,30 @@ const Home = () => {
                     />
                 ))}
             </Games>
+            <h1>Upcoming Games</h1>
+            <Games>
+                {popular?.map((game) => (
+                    <Game 
+                        key={game.id}
+                        name={game.name} 
+                        released={game.released} 
+                        id={game.id}
+                        image={game.background_image}
+                    />
+                ))}
+            </Games>
+            <h1>Upcoming Games</h1>
+            <Games>
+                {newGames?.map((game) => (
+                    <Game 
+                        key={game.id}
+                        name={game.name} 
+                        released={game.released} 
+                        id={game.id}
+                        image={game.background_image}
+                    />
+                ))}
+            </Games>
         </Gamelist>
     )
 }
