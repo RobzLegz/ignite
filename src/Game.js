@@ -3,7 +3,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import {loadDetails} from "./actions/detailAction";
-import { resizedImage } from './util';
 
 const Game = ({name,released,id,image,setPopupState}) => {
 
@@ -18,7 +17,7 @@ const Game = ({name,released,id,image,setPopupState}) => {
         <StyledGame onClick={loadDetailHan}>
             <h3>{name}</h3>
             <p>{released}</p>
-            <img src={resizedImage(image,640)} alt={name}/>
+            <img src={image} alt={name}/>
         </StyledGame>
     )
 }

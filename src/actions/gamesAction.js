@@ -16,7 +16,7 @@ export const loadGames = () => async (dispatch) => {
 };
 
 export const fetchSearchedGames = (game_name) => async (dispatch) => {
-    searchGames = await axios.get(searchedGamesURL(game_name));
+    const searchGames = await axios.get(searchedGamesURL(game_name));
     dispatch({
         type: "FETCH_SEARCHED",
         payload: {

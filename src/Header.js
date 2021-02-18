@@ -1,13 +1,27 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import {fetchSearchedGames} from "./actions/gamesAction";
 
 const Header = () => {
+
+    const [gameNameInput, setGameNameInput] = useState("");
+    const dispatch = useDispatch();
+
+    const submitSearch = (e) => {
+        e.preventDefault();
+        dispatch(
+            fetchSearchedGames(gameNameInput)
+        );
+        setGameNameInput("");
+    };
+
     return (
         <StyledHeader className="header">
             <form className="search">
-                <input placeholder="Search Games" type="text"/>
-                <button type="submit">Search</button>
+                <input onChange={(e) => setGameNameInput(e.target.value)} value={gameNameInput} placeholder="Search Games" type="text"/>
+                <button onClick={submitSearch} type="submit">Search</button>
             </form>
         </StyledHeader>
     )

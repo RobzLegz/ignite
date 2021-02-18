@@ -11,7 +11,7 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const [popupState, setPopupState] = useState(false);
-    const {popular,newGames,upcoming} = useSelector((state) => state.games);
+    const {popular,newGames,upcoming,searched} = useSelector((state) => state.games);
 
     useEffect(() => {
         dispatch(loadGames());
@@ -21,6 +21,25 @@ const Home = () => {
         <Gamelist className="home">
             <img className="background-image" src={BackgroundImage} alt=""/>
             {popupState && <GameDetail setPopupState={setPopupState} />}
+            {searched.length ? (
+                <div className="searchedgames">            
+                    <h1>Searched Games</h1>
+                    <Games>
+                        {searched?.map((game) => (
+                            <Game
+                                setPopupState={setPopupState} 
+                                key={game.id}
+                                name={game.name} 
+                                released={game.released} 
+                                id={game.id}
+                                image={game.background_image}
+                            />
+                        ))}
+                    </Games>
+                </div>
+            ) : (
+                ""
+            )}
             <h1>Upcoming Games</h1>
             <Games>
                 {upcoming?.map((game) => (
