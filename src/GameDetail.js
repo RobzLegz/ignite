@@ -66,7 +66,9 @@ const GameDetail = ({setPopupState}) => {
                     <div className="gameRating">
                         <h1 className="ratingText">{game?.name}</h1>
                         <p className="ratingText">Rating:{game?.rating}</p>
-                        {getStars()}
+                        <div className="starContainer">
+                            {getStars()}
+                        </div>
                     </div>
                     <Info className="gameInfo">
                         <Platforms className="platforms">
@@ -150,6 +152,29 @@ const Detail = styled(motion.div)`
     }
     .lastText{
         margin-bottom: 50px;
+    }
+    @media(max-width:1565px){
+        padding: 6rem 6rem;
+        .ratingText{
+            text-align: center;
+            margin: 0;
+        }
+        .gameStats{
+            flex-direction:column;
+            align-items:center;
+            width:100%;
+        }
+        .gameRating{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .ratingImage{
+            display:inline-flex;
+        }
+    }
+    @media(max-width:818px){
+        padding: 6rem 2rem;
     }
 `;
 

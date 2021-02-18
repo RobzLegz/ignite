@@ -47,6 +47,11 @@ const StyledGame = styled(motion.div)`
         border-radius: 20px;
         margin-top: 10px;
     }
+    @media(max-width: 1211px){
+        img{
+            height: 300px;
+        }
+    }
 `;
 
 export default Game;
