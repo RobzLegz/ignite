@@ -2,7 +2,7 @@ import API_KEY from "./apikey";
 
 const BASE_URL = `https://api.rawg.io/api/`;
 const KEY = `key=${API_KEY}`;
-const gamesPerPage = 10;
+const gamesPerPage = 5;
 
 const getMonth = () => {
     const month = new Date().getMonth() + 1;

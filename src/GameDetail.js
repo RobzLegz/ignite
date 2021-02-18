@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { resizedImage } from './util';
 
 const GameDetail = ({setPopupState}) => {
 
@@ -31,16 +32,16 @@ const GameDetail = ({setPopupState}) => {
                     </Info>
                 </Stats>
                 <div className="media">
-                    <img src={game?.background_image} alt={game?.background_image}/>
+                    <img src={resizedImage(game?.background_image, 1280)} alt={game?.background_image}/>
                 </div>
                 <div className="description">
                     <p className="ratingText lastText">{game.description_raw}</p>
                 </div>
-                <div className="gallery">
+                {/* <div className="gallery">
                     {screen?.results?.map((screenshot) => (
                         <img src={screenshot?.image} alt={screenshot.id} key={screenshot?.id} />
                     ))}
-                </div>
+                </div> */}
             </Detail>     
             <div className="cardShadowRight" onClick={togglePopupVisibility}></div>       
         </CardShadow>
