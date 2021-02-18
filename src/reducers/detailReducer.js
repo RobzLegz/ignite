@@ -9,11 +9,13 @@ const detailReducer = (state = initialState, action) => {
         case "GET_DETAIL":
             return{
                 ...state,
-                game: action.payload.game
-            }
+                game: action.payload.game,
+            };
         default:
             return{
                 ...state,
             };
     };
 };
+
+export default detailReducer;
