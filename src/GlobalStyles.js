@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
         font-family: 'Reggae One', cursive;
         font-weight: lighter;
-        color: #000;
+        color: #fff;
     }
     h3{
         font-size: 1.3rem;

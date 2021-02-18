@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { loadGames } from './actions/gamesAction';
 import Game from './Game';
+import GameDetail from './GameDetail';
+import BackgroundImage from "./img/resourcesbasbdiasufgdosadsadsafdsfdsfdsfdsf.jpg";
 
 const Home = () => {
 
@@ -17,6 +19,8 @@ const Home = () => {
 
     return (
         <Gamelist className="home">
+            <img className="background-image" src={BackgroundImage} alt=""/>
+            <GameDetail />
             <h1>Upcoming Games</h1>
             <Games>
                 {upcoming?.map((game) => (
@@ -58,11 +62,18 @@ const Home = () => {
 }
 
 const Gamelist = styled(motion.div)`
-background-color: #4cd0fb;
     padding: 5rem;
     h1{
         padding: 5rem 0rem;
         z-index: 50;
+    }
+    .background-image{
+        width: 100%;
+        position:fixed;
+        top:0;
+        left:0;
+        object-fit:contain;
+        z-index: -1;
     }
 `;
 
