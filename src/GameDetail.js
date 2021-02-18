@@ -8,6 +8,8 @@ import xbox from './img/xbox.svg';
 import nintendo from './img/nintendo.svg';
 import apple from './img/apple.svg';
 import gamepad from './img/gamepad.svg';
+import starFull from "./img/star-full.png";
+import starEmpty from "./img/star-empty.png";
 
 const GameDetail = ({setPopupState}) => {
 
@@ -43,6 +45,19 @@ const GameDetail = ({setPopupState}) => {
         }
     }
 
+    const getStars = () => {
+        const stars = [];
+        const rating = Math.floor(game.rating);
+        for(let i = 1; i <=5; i++){
+            if(i <= rating){
+                stars.push(<img className="ratingImage" alt={game.rating} key={i} src={starFull} />)
+            }else{
+                stars.push(<img className="ratingImage" alt={game.rating} key={i} src={starEmpty} />)
+            }
+        }
+        return stars;
+    }
+
     return (
         <CardShadow className="cardShadow">
             <div className="cardShadowLeft" onClick={togglePopupVisibility}></div>
@@ -51,6 +66,7 @@ const GameDetail = ({setPopupState}) => {
                     <div className="gameRating">
                         <h1 className="ratingText">{game?.name}</h1>
                         <p className="ratingText">Rating:{game?.rating}</p>
+                        {getStars()}
                     </div>
                     <Info className="gameInfo">
                         <Platforms className="platforms">
@@ -141,6 +157,11 @@ const Stats = styled(motion.div)`
     display:flex;
     align-items: center;
     justify-content:space-between;
+    .ratingImage{
+        width:2rem;
+        height:2rem;
+        display:inline;
+    }
 `;
 
 const Info = styled(motion.div)`
