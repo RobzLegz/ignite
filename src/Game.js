@@ -17,7 +17,12 @@ const StyledGame = styled(motion.div)`
     text-align: center;
     border-radius: 30px;
     overflow: hidden;
-    background: linear-gradient(90deg, #2178DE, #14B4FA );
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border-radius: 30px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 30px;
     cursor: pointer;
     h3{
