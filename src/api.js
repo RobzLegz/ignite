@@ -38,3 +38,5 @@ export const popularGamesURL = () => `${BASE_URL}${popular_games}${KEY}`;
 export const upcomingGamesURL = () => `${BASE_URL}${upcoming_games}${KEY}`;
 export const newGamesURL = () => `${BASE_URL}${new_Games}${KEY}`;
 export const getGameDetailsURL = (game_id) => `${BASE_URL}games/${game_id}`;
+export const getGameScreenshotsURL = (game_id) => `${BASE_URL}games/${game_id}/screenshots`;
+
