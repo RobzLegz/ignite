@@ -40,6 +40,7 @@ const StyledHeader = styled(motion.nav)`
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
     form > input{ 
         width:300px;
         height: 40px;

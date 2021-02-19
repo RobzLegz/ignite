@@ -52,6 +52,18 @@ const StyledGame = styled(motion.div)`
             height: 300px;
         }
     }
+    @media(max-width: 543px){
+        max-width: 80%;
+        max-height: 60vh;
+        margin: 0 auto;
+        padding: 1rem;
+        img{
+            height: auto;
+            width:100%;
+        }
+    }
+    grid-row-gap: 5rem;
+    
 `;
 
 export default Game;
